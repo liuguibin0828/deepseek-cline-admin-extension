@@ -1,0 +1,42 @@
+{
+  "name": "deepseek-cline-admin-extension",
+  "displayName": "Deepseek Cline TTO Admin Dev Extension",
+  "description": "A powerful VSCode extension for generating admin page modules using deepseekV3 and cline. Features include automated module generation, code structure organization, and customizable templates.",
+  "version": "0.1.2",
+  "publisher": "liuguibin",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:deepseek-cline.generatePage"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "deepseek-cline.generatePage",
+        "title": "Generate Page Module"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuguibin/deepseek-cline-admin-extension.git"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.82.0",
+    "@types/node": "16.x",
+    "eslint": "^8.0.1",
+    "typescript": "^4.4.3"
+  }
+}
